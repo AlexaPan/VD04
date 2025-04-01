@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0">
+    <title>Data and Time</title>
+    <style>
+        #datetime {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            text-align: center;
+            margin-top: 50px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1> Site for displaying Date and Time</h1>
+     <div id="datetime">
+        {{ current_time.strftime('%A, %d %B %Y, %H:%M') }}
+    </div>
+
+    <script>
+        function updateTime() {
+            fetch('/current-time')
+                .then(response => response.text())
+                .then(time => {
+                    document.getElementById('datetime').textContent = time;
+                });
+        }
+
+        // Обновляем время каждую минуту (60000 мс)
+        setInterval(updateTime, 60000);
+
+        // Инициализация при загрузке
+        updateTime();
+    </script>
+
+</body>
+</html>
