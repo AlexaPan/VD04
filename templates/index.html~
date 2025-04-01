@@ -10,13 +10,13 @@
 
     <ul class="nav nav-pills">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/">Main</a>
+        <a class="nav-link active" aria-current="page" href="/">Активная</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/blog/">Blog</a>
+        <a class="nav-link" href="/blog/">Ссылка</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/contact/">Contact</a>
+        <a class="nav-link" href="/contact/">Ссылка</a>
       </li>
     </ul>
 
