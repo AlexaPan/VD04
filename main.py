@@ -9,15 +9,30 @@ app = Flask(__name__)
 
 @app.route("/")
 def app_cards():
-    return render_template("home.html")
+    context = {
+        "active_home": "active",
+        "active_about": "",
+        "active_contact": ""
+    }
+    return render_template("home.html", **context)
 
 @app.route('/blog/')
 def blog():
-    return render_template('about.html')
+    context = {
+        "active_home": "",
+        "active_about": "active",
+        "active_contact": ""
+    }
+    return render_template('about.html', **context)
 
 @app.route('/contact/')
 def contacts():
-    return render_template('contact.html')
+    context = {
+        "active_home": "",
+        "active_about": "",
+        "active_contact": "active"
+    }
+    return render_template('contact.html', **context)
 
 if __name__ == "__main__":
     app.run(debug=True)
