@@ -14,7 +14,6 @@ def show_datetime():
     now = datetime.now()
 
     return render_template("index1.html", current_time=now)
-
 @app.route('/current-time')
 def get_current_time():
     now = datetime.now()

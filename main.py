@@ -1,13 +1,6 @@
-# Задание 2
-#
-# Создайте новое приложение Flask, создайте структуру проекта
-# с папками static и templates, в папке templates должны
-# быть 3 html файла: index, blog, contacts (главная страница,
-# страница блога и контакты). Заполните их информацией и выведите
-# силами flask сервера, используя функцию render_template()
-#
-# Обязательно на всех страницах сделайте меню, которое будет
-# работать именно при запуске проекта через flask
+# VD05
+# Создайте свой HTML-шаблон (файл base.html).
+# Создайте страницы home.html и about.html, которые будут расширять шаблон и заполнять его контентом.
 
 from flask import Flask, render_template
 
@@ -16,11 +9,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def app_cards():
-    return render_template("index.html")
+    return render_template("home.html")
 
 @app.route('/blog/')
 def blog():
-    return render_template('blog.html')
+    return render_template('about.html')
 
 @app.route('/contact/')
 def contacts():
